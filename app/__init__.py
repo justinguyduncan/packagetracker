@@ -3,7 +3,7 @@ from app.config import Config
 from app.shipping_form import ShippingForm
 app=Flask(__name__)
 from flask_migrate import Migrate
-from .models import db
+from app.models import db
 
 db.init_app(app)
 migrate = Migrate(app, db)
