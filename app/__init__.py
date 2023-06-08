@@ -5,9 +5,11 @@ app=Flask(__name__)
 from flask_migrate import Migrate
 from .models import db
 
+db.init_app(app)
 migrate = Migrate(app, db)
+
 app.config.from_object(Config)
-db.init_app
+
 
 @app.route('/')
 def home():
